@@ -2,6 +2,16 @@ const keyboard = require("../lib/keyboard");
 const { addUser, getUsers } = require("../lib/database");
 
 module.exports = (bot) => {
+bot.on("message", (msg) => {
+
+    if (msg.text === "🔎 Cari Partner") {
+        return bot.emit("text", {
+            ...msg,
+            text: "/search"
+        });
+    }
+
+});
 
     bot.onText(/\/start/, (msg) => {
 
@@ -26,7 +36,7 @@ module.exports = (bot) => {
 ━━━━━━━━━━━━━━
 
 Silakan gunakan tombol di bawah untuk memulai.`,
-            keyboard
+            keyboard.main
         );
 
     });

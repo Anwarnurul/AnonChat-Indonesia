@@ -9,6 +9,8 @@ const bot = new TelegramBot(process.env.BOT_TOKEN, {
 require("./handlers/start")(bot);
 require("./handlers/search")(bot);
 require("./handlers/message")(bot);
+require("./handlers/media")(bot);
+require("./handlers/admin")(bot);
 require("./handlers/next")(bot);
 require("./handlers/stop")(bot);
 bot.on("message", (msg) => {
